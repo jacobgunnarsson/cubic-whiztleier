@@ -1,0 +1,30 @@
+/*
+ * helpers/_mixins.scss
+ */
+
+// http://a11yproject.com/posts/how-to-hide-content
+// https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
+@mixin visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+@mixin above($size) {
+  @media (min-width: get-breakpoint-size($size)) { @content; }
+}
+
+@mixin below($size) {
+  @media (max-width: get-breakpoint-size($size)) { @content; }
+}
+
+@mixin between($from-size, $to-size) {
+  $from-size: get-breakpoint-size($from-size);
+  $to-size: get-breakpoint-size($to-size);
+
+  @media (min-width: $to-size) and (max-width: $to-size) { @content; }
+}

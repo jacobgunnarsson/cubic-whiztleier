@@ -1,0 +1,33 @@
+.recorder {
+  display: flex;
+  position: relative;
+  border: 2px solid #333;
+
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  & + & { margin-top: 30px; }
+
+  &--is-listening {
+    &:after { content: 'Waiting...'; }
+  }
+
+  &--is-recording {
+    &:after {
+      width: 15px;
+      height: 15px;
+      background: red;
+      border-radius: 50%;
+    }
+  }
+}

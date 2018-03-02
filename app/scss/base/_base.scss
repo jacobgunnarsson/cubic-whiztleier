@@ -1,0 +1,24 @@
+/*
+ * base/_base.scss
+ */
+
+html {
+  font-size: $font-base-size;
+  font-family: $font-base-family;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+body {
+  // Set a standardized guaranteed line-height of 1, since the default
+  // interpreted value of 'normal' is browser specific
+  // http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation
+  line-height: 1;
+}
+
+*,
+*:before,
+*:after { box-sizing: inherit; }
+
+// Prevent overflowing of images in fluid containers
+img { max-width: 100%; }
