@@ -20,8 +20,8 @@ let latestListeningRAFId
 let noteSamples = []
 let bezierSamples = []
 
-const getYMax = () => Math.max.apply(Math, noteSamples.map(sample => sample.pitch))
-const getYMin = () => Math.min.apply(Math, noteSamples.map(sample => sample.pitch))
+const getYMax = () => Math.max(...noteSamples.map(sample => sample.pitch))
+const getYMin = () => Math.min(...noteSamples.map(sample => sample.pitch))
 
 const getX = (sample) => recorderCanvasWidth * (sample.duration / EASING_DURATION)
 
